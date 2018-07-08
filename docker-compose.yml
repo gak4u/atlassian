@@ -25,7 +25,7 @@ services:
       - bitbucket-data:/var/atlassian/application-data/bitbucket
       
   servicedesk:
-    image: atlassian-jira-service-desk:3.13.2
+    image: cptactionhank/atlassian-jira-service-desk:3.13.2
     restart: always
     links:
       - database
