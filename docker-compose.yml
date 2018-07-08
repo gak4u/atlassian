@@ -23,6 +23,14 @@ services:
       - database
     volumes:
       - bitbucket-data:/var/atlassian/application-data/bitbucket
+      
+  servicedesk:
+    image: atlassian-jira-service-desk:3.13.2
+    restart: always
+    links:
+      - database
+    volumes:
+      - servicedesk-data:/var/atlassian/application-data
 
   database:
     image: postgres:9.4
@@ -48,3 +56,4 @@ volumes:
   confluence-data:
   bitbucket-data:
   database-data:
+  servicedesk-data:
